@@ -24,8 +24,15 @@
     </head>
 
 <body class="home blog logged-in group-blog">
+  <div class="tb" style="background-color:#74b3ce;"><a href="/"></a></div>
+  <div class="tb" style="background-color:#508991;"><a href="/"></a></div>
+  <div class="tb" style="background-color:#172a3a;"><a href="/"></a></div>
+  <div class="tb" style="background-color:#004346;"><a href="/"></a></div>
 <style type="text/css">
-h1 { font-size: 32px; }
+.tb {display:block;}
+h1 { font-size: 32px; min-height:5px;}
+a { color: #508991;}
+a:visited { color: #004346;}
 #content {
   position: relative;
   float: left;
@@ -37,7 +44,7 @@ h1 { font-size: 32px; }
   #content {
     float: right;
     clear: none;
-    width: 50%;
+    width: 66.66%;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -67,16 +74,16 @@ header#masthead {
   header#masthead {
     float: right;
     clear: none;
-    width: 50%;
+    width: 33.33%;
     height: 100%;
   }
   header .center {
     position: fixed;
     display: table;
     top: 0;
-    left: 50%;
+    left: 66.66%;
     right:0;
-    width: 50%;
+    width: 33.33%;
     height: 100%;
     padding: 32px 32px 102px;
   }
@@ -178,34 +185,39 @@ footer  .scroll-top {
 article {
   padding: 40px;
 }
-footer {
+footer#colophon {
   position: relative;
   float: left;
   clear: both;
   width: 100%;
   text-align: center;
-  padding: 2px;
+  padding: 30px;
 }
 @media only screen and (min-width: 768px) {
-  footer {
+  footer#colophon {
     width: 50%;
   }
 }
 @media only screen and (min-width: 1024px) {
-  footer {
+  footer#colophon {
     width: 66.66%;
   }
 }
 @media only screen and (min-width: 1420px) {
-  footer {
+  footer#colophon {
     width: 75%;
     padding: 4px;
   }
 }
 @media only screen and (min-width: 1800px) {
-  footer {
+  footer#colophon {
     width: 80%;
   }
+}
+footer .entry-footer {
+  width: 100%;
+  text-align: none;
+  border-bottom: 1px solid #efefef;
 }
 #colophon {
   position: relative;
@@ -263,7 +275,14 @@ footer {
     bottom: 30px;
   }
 }
-h1.fixed {
+.group-blog .byline {
+  display: none;
+}
+.group-blog .byline a {
+  text-decoration: none;
+}
+@media only screen and (min-width: 768px) {
+article.has-post-thumbnail h1.fixed {
   position: absolute;
   z-index: 2;
   font-size: 30px;
@@ -287,7 +306,29 @@ h1.fixed a {
   font-size: 12px;
   color: #999;
 }
-h1, h2, h3, h4, h5, h6 { font-family: "adelle-sans",helvetica,sans-serif;
+.group-blog .byline {
+  display:inline;
+}
+}
+h1.fixed {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+h1.fixed a {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(255, 255, 255) 15px 0px 0px 0px, rgb(255, 255, 255) -15px 0px 0px 0px;
+  height: auto;
+  line-height: 48px;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+.post-cover {
+  margin-top:25px;
+}
+article.has-no-thumbnail h1.fixed {}
+h1, h2, h3, h4, h5, h6 { font-family: 'Nunito', sans-serif;
 font-weight: 800;}
 h2 { font-size: 30px;
   line-height: 40px;
@@ -296,15 +337,122 @@ h2 { font-size: 30px;
   -webkit-font-smoothing: antialiased;
   padding-bottom: 7px;
   padding-top: 19px;}
-body { }
-p { padding-bottom: 24px;
+body {
+  font-size: 14px;
+  line-height: 28px;
+}
+p {
   font-size: 17px;
   line-height: 32px;
   -webkit-font-smoothing: antialiased;
   text-align: left;
-  vertical-align: baseline;  
+  vertical-align: baseline;
+}
+nav {
+  width: 100%;
+  margin-top: 38px;
+  text-align: center;
+}
+nav ul {
+  position: relative;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin: 3px 2px;
+}
+nav ul li a {
+background: #FFFFFF;
+color: #000000;
+display: block;
+padding: 8px 12px;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: 600;
+text-align: center;
+}
+nav ul li a:hover {
+  color:#ffffff;
+  background-color: #000000;
+}
+.main-navigation li { float:none; }
+.cat-links a, .posted-on a, .byline, .comments-link a {
+  padding: 8px 12px;
+  margin-right: 5px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.posted-on a {padding-right: 0;}
+.cat-links a:hover {
+  color:#ffffff;
+  background-color: #000000;
+}
+.menu-toggle {
+  margin: 0 auto;
+}
+footer {opacity: 0.5;}
+footer:hover {opacity:1}
+article.type-quote .entry-content {
+  padding:25px;
+  background-color: #74b3ce;
+  color:#ffffff;
+  margin-bottom:1.5em;
+}
+article.type-quote .entry-content p {
+  margin-bottom:0;
+}
+article.type-quote .entry-title {
+  display:none;
+}
+article.type-image .entry-content p {
+  margin-bottom:;
+}
+article.type-image .entry-content img {
+  margin: 0 0 20px -1em;
+  width: 110%;
+  max-width:615px;
+}
+article.type-image .entry-title {
+  display:none;
+}
+.site-title a {
+    background: #172a3a;
+    color: #ffffff;
+    display: block;
+    padding: 12px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+}
+.site-title a:hover {
+    color:#ffffff;
+    background-color: #74b3ce;
+}
+.site-description {
+  font-size: 1.3em;
+}
+.nav-links .nav-previous a {
+  background: #ffffff;
+  color: #000000;
+  display: block;
+  padding: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing:1px;
+  font-size: 11px;
+  text-align: center;
+  text-decoration: none;
+}
+.nav-links .nav-previous a:hover {
+  color:#ffffff;
+  background-color: #74b3ce;
 }
 </style>
+<link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 
 <div id="page" class="hfeed site">
   <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -313,22 +461,16 @@ p { padding-bottom: 24px;
     <div class="center">
     <div class="centered">
     <div class="site-branding">
-      <h1 class="site-title"><a href="http://test.kevanlee.com/" rel="home">Kid&#039;s Couch</a></h1>
-      <h2 class="site-description">Highly effective </h2>
+      <img src="file://localhost/Users/kevanlee/Desktop/Backpack-256.png" style="max-width:150px;margin-bottom:20px">
+      <h1 class="site-title"><a href="http://test.kevanlee.com/" rel="home">Flash WP</a></h1>
+      <h2 class="site-description">Fancy pants blogging theme for Wordpress</h2>
     </div><!-- .site-branding -->
 
     <nav id="site-navigation" class="main-navigation" role="navigation">
-      <button class="menu-toggle" aria-controls="menu" aria-expanded="false">Primary Menu</button>
-      <div class="menu"><ul><li class="current_page_item"><a href="http://test.kevanlee.com/">Home</a></li><li class="page_item page-item-83"><a href="http://test.kevanlee.com/about/">About</a></li><li class="page_item page-item-274"><a href="http://test.kevanlee.com/articles/">Articles</a></li><li class="page_item page-item-278"><a href="http://test.kevanlee.com/consulting/">Consulting</a></li><li class="page_item page-item-61"><a href="http://test.kevanlee.com/contact/">Contact</a></li><li class="page_item page-item-290"><a href="http://test.kevanlee.com/e-mail-newsletter-templates/">E-mail newsletter templates</a></li><li class="page_item page-item-63"><a href="http://test.kevanlee.com/writing/">My Writing</a></li><li class="page_item page-item-2"><a href="http://test.kevanlee.com/resources/">Resources</a></li><li class="page_item page-item-4"><a href="http://test.kevanlee.com/shop/">Shop</a></li><li class="page_item page-item-276"><a href="http://test.kevanlee.com/sitemap/">Sitemap</a></li><li class="page_item page-item-19"><a href="http://test.kevanlee.com/support/">Support</a></li><li class="page_item page-item-7"><a href="http://test.kevanlee.com/order-tracking/">Track your order</a></li></ul></div>
+      <button class="menu-toggle" aria-controls="menu" aria-expanded="false">Go to ...</button>
+      <div class="menu"><ul><li class="current_page_item"><a href="http://test.kevanlee.com/">Home</a></li><li class="page_item page-item-83"><a href="http://test.kevanlee.com/about/">About</a></li><li class="page_item page-item-274"><a href="http://test.kevanlee.com/articles/">Articles</a></li><li class="current_page_item"><a href="http://test.kevanlee.com/">Home</a></li><li class="page_item page-item-83"><a href="http://test.kevanlee.com/about/">About</a></li><li class="page_item page-item-274"><a href="http://test.kevanlee.com/articles/">Articles</a></li></ul></div>
     </nav><!-- #site-navigation -->
-    <div id="secondary" class="widget-area" role="complementary">
-      <aside id="archives-3" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
-        <li><a href='http://test.kevanlee.com/2014/11/'>November 2014</a></li>
-        <li><a href='http://test.kevanlee.com/2013/01/'>January 2013</a></li>
-        <li><a href='http://test.kevanlee.com/2008/09/'>September 2008</a></li>
-        <li><a href='http://test.kevanlee.com/2008/08/'>August 2008</a></li>
-      </ul>
-    </aside></div><!-- #secondary -->
+
   </div><!-- .center -->
   </div><!-- .centered -->
   </header><!-- #masthead -->
@@ -338,12 +480,10 @@ p { padding-bottom: 24px;
   <div id="primary" class="content-area posts-holder posts-grid">
     <main id="main" class="site-main" role="main">
 
-<article id="post-523" class="post-523 post type-post status-publish format-standard hentry category-uncategorized">
+<article id="post-523" class="post-523 post type-post has-post-thumbnail status-publish format-standard hentry category-uncategorized">
   <header class="entry-header">
     <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark">Ah, that&#8217;s better</a></h1>
     <div class="post-cover"> <img src="http://despreneur-cdn.despreneur.netdna-cdn.com/wp-content/uploads/2013/09/nicetomeetyou.jpg" alt="" scale="0"><p></p></div>
-        <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
       </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -353,7 +493,12 @@ p { padding-bottom: 24px;
       </div><!-- .entry-content -->
 
   <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Leave a comment</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
+    <div class="entry-meta">
+      <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+      <!-- .entry-meta -->
+      <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+      </span>	</footer>
+      <!-- .entry-footer -->
 </article><!-- #post-## -->
 
 <article id="post-176" class="post-176 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
@@ -361,7 +506,7 @@ p { padding-bottom: 24px;
     <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/16-tips-for-troubleshooting-html/" rel="bookmark">16 Tips for Troubleshooting HTML</a></h1>
     <div class="post-cover"> <img src="http://despreneur-cdn.despreneur.netdna-cdn.com/wp-content/uploads/2013/09/nicetomeetyou.jpg" alt="" scale="0"><p></p></div>
         <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/16-tips-for-troubleshooting-html/" rel="bookmark"><time class="entry-date published" datetime="2013-01-29T14:37:56+00:00">January 29, 2013</time><time class="updated" datetime="2014-01-17T18:28:06+00:00">January 17, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
+      <span class="posted-on"><a href="http://test.kevanlee.com/16-tips-for-troubleshooting-html/" rel="bookmark"><time class="entry-date published" datetime="2013-01-29T14:37:56+00:00">January 29, 2013</time><time class="updated" datetime="2014-01-17T18:28:06+00:00">January 17, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
       </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -372,16 +517,19 @@ p { padding-bottom: 24px;
 
       </div><!-- .entry-content -->
 
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="http://test.kevanlee.com/16-tips-for-troubleshooting-html/#respond" title="Comment on 16 Tips for Troubleshooting HTML">Leave a comment</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=176&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
+      <footer class="entry-footer">
+        <div class="entry-meta">
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer>
+          <!-- .entry-footer -->
 </article><!-- #post-## -->
 
 
-<article id="post-173" class="post-173 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+<article id="post-173" class="post-173 post type-post status-publish format-standard has-no-thumbnail hentry category-uncategorized">
   <header class="entry-header">
-    <h1 class="entry-title"><a href="http://test.kevanlee.com/anatomy-of-a-mobile-email/" rel="bookmark">Anatomy of a Mobile Email</a></h1>
-        <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/anatomy-of-a-mobile-email/" rel="bookmark"><time class="entry-date published" datetime="2013-01-29T14:37:01+00:00">January 29, 2013</time><time class="updated" datetime="2013-02-03T03:21:43+00:00">February 3, 2013</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/admin/">admin</a></span></span>		</div><!-- .entry-meta -->
+    <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/anatomy-of-a-mobile-email/" rel="bookmark">Anatomy of a Mobile Email</a></h1>
       </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -392,16 +540,39 @@ p { padding-bottom: 24px;
 
       </div><!-- .entry-content -->
 
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="http://test.kevanlee.com/anatomy-of-a-mobile-email/#respond" title="Comment on Anatomy of a Mobile Email">Leave a comment</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=173&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
+      <footer class="entry-footer">
+        <div class="entry-meta">
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 
-<article id="post-168" class="post-168 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+<article id="post-168" class="post-168 post type-quote status-publish format-standard has-post-thumbnail hentry category-uncategorized">
   <header class="entry-header">
     <h1 class="entry-title"><a href="http://test.kevanlee.com/designing-the-perfect-call-to-action/" rel="bookmark">Designing the Perfect Call to Action</a></h1>
+      </header><!-- .entry-header -->
+
+  <div class="entry-content">
+    <p>
+      "Empathy isn't just remembering to say That must really be hard, it's figuring out how to bring difficulty into the light so it can be seen at all. Empathy isn't just listening, it's asking the questions whose answers need to be listened to. Empathy requires inquiry as much as imagination. Empathy requires knowing you know nothing. Empathy means acknowledging a horizon of context that extends perpetually beyond what you can see."
+
+    </p>
+
+      </div><!-- .entry-content -->
+
+      <footer class="entry-footer">
         <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/designing-the-perfect-call-to-action/" rel="bookmark"><time class="entry-date published" datetime="2013-01-29T14:35:38+00:00">January 29, 2013</time><time class="updated" datetime="2013-02-03T03:22:03+00:00">February 3, 2013</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/admin/">admin</a></span></span>		</div><!-- .entry-meta -->
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-165" class="post-165 post type-post status-publish format-standard  hentry category-uncategorized">
+  <header class="entry-header">
+    <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/email-client-market-share-new-stats/" rel="bookmark">Email Client Market Share: New Stats</a></h1>
       </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -412,38 +583,22 @@ p { padding-bottom: 24px;
 
       </div><!-- .entry-content -->
 
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="http://test.kevanlee.com/designing-the-perfect-call-to-action/#respond" title="Comment on Designing the Perfect Call to Action">Leave a comment</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=168&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
-
-<article id="post-165" class="post-165 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-  <header class="entry-header">
-    <h1 class="entry-title"><a href="http://test.kevanlee.com/email-client-market-share-new-stats/" rel="bookmark">Email Client Market Share: New Stats</a></h1>
+      <footer class="entry-footer">
         <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/email-client-market-share-new-stats/" rel="bookmark"><time class="entry-date published updated" datetime="2013-01-29T14:34:53+00:00">January 29, 2013</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
-      </header><!-- .entry-header -->
-
-  <div class="entry-content">
-    <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-<p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-<p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-<p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
-      </div><!-- .entry-content -->
-
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="http://test.kevanlee.com/email-client-market-share-new-stats/#respond" title="Comment on Email Client Market Share: New Stats">Leave a comment</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=165&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 
-<article id="post-143" class="post-143 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+<article id="post-143" class="post-143 post type-image status-publish format-standard has-post-thumbnail hentry category-uncategorized">
   <header class="entry-header">
-    <h1 class="entry-title"><a href="http://test.kevanlee.com/great-great-moustache/" rel="bookmark">How to remove menu items from WordPress dashboard</a></h1>
-        <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/great-great-moustache/" rel="bookmark"><time class="entry-date published" datetime="2013-01-22T22:52:59+00:00">January 22, 2013</time><time class="updated" datetime="2013-01-25T16:57:42+00:00">January 25, 2013</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
+    <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/great-great-moustache/" rel="bookmark">How to remove menu items from WordPress dashboard</a></h1>
       </header><!-- .entry-header -->
 
   <div class="entry-content">
+    <img src="https://gimmebar-assets.s3.amazonaws.com/54441bf299a58.png">
     <p>The WordPress codex is full of fun little things that you can experiment with. Have you ever wanted to remove a menu page from the WordPress dashboard? Perhaps you’re building a site for a client who gets confused by the settings menu. Blow the dust off of your handy codex and check out the function references for removing menu pages.</p>
 <p>Here’s what you’re looking for:</p>
 <p>Replace the menu slug with the name of the php script for the menu item you want to remove.</p>
@@ -454,16 +609,18 @@ p { padding-bottom: 24px;
 
       </div><!-- .entry-content -->
 
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="http://test.kevanlee.com/great-great-moustache/#respond" title="Comment on How to remove menu items from WordPress dashboard">Leave a comment</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=143&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
+      <footer class="entry-footer">
+        <div class="entry-meta">
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 
-<article id="post-92" class="post-92 post type-post status-publish format-standard has-post-thumbnail hentry category-child-category-i category-parent-category-i category-parent-category-ii tag-tag2 tag-tag5 tag-tag6">
+<article id="post-92" class="post-92 post type-post status-publish format-standard hentry category-child-category-i category-parent-category-i category-parent-category-ii tag-tag2 tag-tag5 tag-tag6">
   <header class="entry-header">
-    <h1 class="entry-title"><a href="http://test.kevanlee.com/another-post-with-everything-in-it/" rel="bookmark">Another Post with Everything In It</a></h1>
-        <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/another-post-with-everything-in-it/" rel="bookmark"><time class="entry-date published" datetime="2008-09-17T17:10:52+00:00">September 17, 2008</time><time class="updated" datetime="2013-01-04T14:36:13+00:00">January 4, 2013</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
+    <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/another-post-with-everything-in-it/" rel="bookmark">Another Post with Everything In It</a></h1>
       </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -471,16 +628,18 @@ p { padding-bottom: 24px;
 
       </div><!-- .entry-content -->
 
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/parent-category-i/child-category-i/" rel="category tag">Child Category I</a>, <a href="http://test.kevanlee.com/category/parent-category-i/" rel="category tag">Parent Category I</a>, <a href="http://test.kevanlee.com/category/parent-category-ii/" rel="category tag">Parent Category II</a></span><span class="tags-links">Tagged <a href="http://test.kevanlee.com/tag/tag2/" rel="tag">tag2</a>, <a href="http://test.kevanlee.com/tag/tag5/" rel="tag">tag5</a>, <a href="http://test.kevanlee.com/tag/tag6/" rel="tag">tag6</a></span><span class="comments-link"><a href="http://test.kevanlee.com/another-post-with-everything-in-it/#comments" title="Comment on Another Post with Everything In It">2 Comments</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=92&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
+      <footer class="entry-footer">
+        <div class="entry-meta">
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 
 <article id="post-90" class="post-90 post type-post status-publish format-standard hentry category-uncategorized">
   <header class="entry-header">
-    <h1 class="entry-title"><a href="http://test.kevanlee.com/an-ordered-list-post/" rel="bookmark">An Ordered List Post</a></h1>
-        <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/an-ordered-list-post/" rel="bookmark"><time class="entry-date published updated" datetime="2008-09-17T17:09:41+00:00">September 17, 2008</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
+    <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/an-ordered-list-post/" rel="bookmark">An Ordered List Post</a></h1>
       </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -496,16 +655,18 @@ p { padding-bottom: 24px;
 
       </div><!-- .entry-content -->
 
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="http://test.kevanlee.com/an-ordered-list-post/#respond" title="Comment on An Ordered List Post">Leave a comment</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=90&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
+      <footer class="entry-footer">
+        <div class="entry-meta">
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 
 <article id="post-85" class="post-85 post type-post status-publish format-standard hentry category-child-category-iii category-parent-category-iii tag-tag1 tag-tag3 tag-tag6">
   <header class="entry-header">
-    <h1 class="entry-title"><a href="http://test.kevanlee.com/a-simple-text-post/" rel="bookmark">A Simple Text Post</a></h1>
-        <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/a-simple-text-post/" rel="bookmark"><time class="entry-date published updated" datetime="2008-09-17T17:08:48+00:00">September 17, 2008</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
+    <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/a-simple-text-post/" rel="bookmark">A Simple Text Post</a></h1>
       </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -513,16 +674,18 @@ p { padding-bottom: 24px;
 
       </div><!-- .entry-content -->
 
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/parent-category-iii/child-category-iii/" rel="category tag">Child Category III</a>, <a href="http://test.kevanlee.com/category/parent-category-iii/" rel="category tag">Parent Category III</a></span><span class="tags-links">Tagged <a href="http://test.kevanlee.com/tag/tag1/" rel="tag">tag1</a>, <a href="http://test.kevanlee.com/tag/tag3/" rel="tag">tag3</a>, <a href="http://test.kevanlee.com/tag/tag6/" rel="tag">tag6</a></span><span class="comments-link"><a href="http://test.kevanlee.com/a-simple-text-post/#respond" title="Comment on A Simple Text Post">Leave a comment</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=85&amp;action=edit">Edit</a></span>	</footer><!-- .entry-footer -->
+      <footer class="entry-footer">
+        <div class="entry-meta">
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 
 <article id="post-82" class="post-82 post type-post status-publish format-standard hentry category-uncategorized">
   <header class="entry-header">
-    <h1 class="entry-title"><a href="http://test.kevanlee.com/hello-world-2/" rel="bookmark">Hello world!</a></h1>
-        <div class="entry-meta">
-      <span class="posted-on">Posted on <a href="http://test.kevanlee.com/hello-world-2/" rel="bookmark"><time class="entry-date published updated" datetime="2008-09-17T16:53:25+00:00">September 17, 2008</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div><!-- .entry-meta -->
+    <h1 class="entry-title fixed"><a href="http://test.kevanlee.com/hello-world-2/" rel="bookmark">Hello world!</a></h1>
       </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -530,9 +693,12 @@ p { padding-bottom: 24px;
 
       </div><!-- .entry-content -->
 
-  <footer class="entry-footer">
-    <span class="cat-links">Posted in <a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link"><a href="http://test.kevanlee.com/hello-world-2/#comments" title="Comment on Hello world!">2 Comments</a></span><span class="edit-link"><a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=82&amp;action=edit">Edit</a></span>
-    </footer><!-- .entry-footer -->
+      <footer class="entry-footer">
+        <div class="entry-meta">
+          <span class="posted-on"><a href="http://test.kevanlee.com/ah-thats-better/" rel="bookmark"><time class="entry-date published updated" datetime="2014-11-08T04:30:17+00:00">November 8, 2014</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://test.kevanlee.com/author/kevanlee/">Kevan Lee</a></span></span>		</div>
+          <!-- .entry-meta -->
+          <span class="cat-links"><a href="http://test.kevanlee.com/category/uncategorized/" rel="category tag">Uncategorized</a></span><span class="comments-link">&nbsp;<a href="http://test.kevanlee.com/ah-thats-better/#respond" title="Comment on Ah, that&#8217;s better">Comment</a></span><span class="edit-link">&nbsp;<a class="post-edit-link" href="http://test.kevanlee.com/wp-admin/post.php?post=523&amp;action=edit">&#9787;</a>
+          </span>	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
         <nav class="navigation paging-navigation" role="navigation">
@@ -557,7 +723,6 @@ p { padding-bottom: 24px;
       <a href="http://wordpress.org/">Proudly powered by WordPress</a>
       <span class="sep"> | </span>
       Theme: flashg by <a href="http://underscores.me/" rel="designer">Underscores.me</a>.		</div><!-- .site-info -->
-      <a href="#top" class="scroll-top"><i class="social-up">&#8593;</i></a>
       <a href="#0" class="cd-top">Top</a></footer><!-- #colophon -->
 </div><!-- #page -->
 
