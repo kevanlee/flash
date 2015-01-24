@@ -35,7 +35,7 @@ the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
       <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_footer">
-        <form action="//kevanlee.us1.list-manage.com/subscribe/post?u=269b1b68a4034096e04f017a0&amp;id=299f8ed916" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+        <form action="//kevanlee.us1.list-manage.com/subscribe/post?u=<?php echo get_option( 'text_test' ); ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
           <div id="mc_embed_signup_scroll">
             <h2>Subscribe to our mailing list</h2>
             <div class="mc-field-group">
