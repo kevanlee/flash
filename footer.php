@@ -16,7 +16,6 @@
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'wows' ), 'wows', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
 		</div><!-- .site-info -->
-	check this out <?php echo get_option( 'text_test' ); ?>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
