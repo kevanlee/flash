@@ -24,7 +24,7 @@
  */
 function wows_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'wows_custom_header_args', array(
-		'default-image'          => '',
+		'default-image'          => 'http://i.imgur.com/aNDDRUB.jpg',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
